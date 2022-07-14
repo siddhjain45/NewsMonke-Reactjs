@@ -1,0 +1,17 @@
+name: docker image workflow
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: checkout code base
+      uses: actions/checkout@v1
+    
+    - name: build and push
+      run: |
+        docker build -t siddhjain66/react_news:1.0 .
+      
+      env:
+        DEFAULT_BRANCH: master
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
