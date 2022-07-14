@@ -1,6 +1,6 @@
 FROM node:14.17.6-alpine
 WORKDIR /usr/react
-COPY package*.json .
+COPY package*.json ./
 RUN npm install
 COPY . .
 EXPOSE 3000
